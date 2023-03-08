@@ -17,3 +17,15 @@ Feature: Login Functionality
       | posmanager53@info.com    | posmanager   |
       | posmanager100@info.com   | posmanager   |
 
+  Scenario Outline: Login with invalid credentials
+    When User enters invalid email "<email>"
+    And User enters invalid password "<password>"
+    And User clicks login button
+    Then User should see the error message
+
+    Examples: Email and Password
+      | email                    | password     |
+      | salesmanage6@info.com   | salesmanager |
+      | salesmanager100@info.com | salesmanage |
+      | posmanager1@info.com    | posmanager   |
+      | posmanager100@info.com   | pomanager   |

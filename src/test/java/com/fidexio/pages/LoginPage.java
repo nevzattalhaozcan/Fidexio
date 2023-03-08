@@ -20,4 +20,7 @@ public class LoginPage {
     @FindBy(css = ".btn.btn-primary")
     public WebElement loginBtn;
 
+    @FindBy(css = ".alert.alert-danger")
+    public WebElement wrongLoginError;
+
 }
