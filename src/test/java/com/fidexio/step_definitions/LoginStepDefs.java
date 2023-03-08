@@ -48,4 +48,19 @@ public class LoginStepDefs {
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    @When("User enters invalid email {string}")
+    public void userEntersInvalidEmail(String arg0) {
+        loginPage.email.sendKeys(arg0);
+    }
+
+    @And("User enters invalid password {string}")
+    public void userEntersInvalidPassword(String arg0) {
+        loginPage.password.sendKeys(arg0);
+    }
+
+    @Then("User should see the error message")
+    public void userShouldSeeTheErrorMessage() {
+        Assert.assertTrue(loginPage.wrongLoginError.isDisplayed());
+    }
+
 }
