@@ -38,8 +38,6 @@ public class Driver {
 
             }
 
-            System.out.println("Browser: " + browser);
-
             switch (browser) {
 
                 case "remote-chrome":

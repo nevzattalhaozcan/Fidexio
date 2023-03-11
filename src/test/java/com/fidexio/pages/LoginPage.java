@@ -23,4 +23,7 @@ public class LoginPage {
     @FindBy(css = ".alert.alert-danger")
     public WebElement wrongLoginError;
 
+    @FindBy(linkText = "Reset Password")
+    public WebElement resetPassword;
+
 }
