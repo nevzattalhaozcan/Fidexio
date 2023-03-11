@@ -14,13 +14,13 @@ Feature: Login Functionality
   Background: Login page
     Given User is on the login page
 
-
+  @FIDEX10-388
   Scenario Outline: Users can log in with valid credentials
     When User enters an email "<email>"
     And User enters a password "<password>"
     And User clicks login button
     Then User should be on the homepage
-    @FIDEX10-388
+
     Examples: Valid Credentials
       | email                    | password     |
       | salesmanager6@info.com   | salesmanager |
@@ -28,13 +28,13 @@ Feature: Login Functionality
       | posmanager53@info.com    | posmanager   |
       | posmanager100@info.com   | posmanager   |
 
-
+  @FIDEX10-390
   Scenario Outline: "Wrong login/password" should be displayed for invalid credentials
     When User enters an email "<email>"
     And User enters a password "<password>"
     And User clicks login button
     Then User should see the error message
-    @FIDEX10-390
+
     Examples: Invalid Credentials
       | email                    | password     |
       | salesmanage6@info.com    | salesmanager |
@@ -42,13 +42,13 @@ Feature: Login Functionality
       | posmanager1@info.com     | posmanager   |
       | posmanager100@info.com   | pomanager    |
 
-
+  @FIDEX10-391
   Scenario Outline: "Please fill out this field" message should be displayed for empty fields
     When User enters an email "<email>"
     And User enters a password "<password>"
     And User clicks login button
     Then User should see the required message
-    @FIDEX10-391
+
     Examples: Email and Password with some empty fields
       | email                    | password     |
       |                          | salesmanager |
