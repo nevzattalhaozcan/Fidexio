@@ -42,11 +42,11 @@ public class LoginStepDefs {
     public void userShouldSeeTheRequiredMessage() {
 
         if (loginPage.email.getAttribute("required").equals("required")) {
-            Assert.assertEquals(loginPage.email.getAttribute("validationMessage"), "Please fill out this field.");
+            Assert.assertEquals("Please fill out this field.",loginPage.email.getAttribute("validationMessage"));
         }
 
         if (loginPage.password.getAttribute("required").equals("required")) {
-            Assert.assertEquals(loginPage.password.getAttribute("validationMessage"), "Please fill out this field.");
+            Assert.assertEquals("Please fill out this field.",loginPage.password.getAttribute("validationMessage"));
         }
 
     }
